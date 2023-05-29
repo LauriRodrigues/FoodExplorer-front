@@ -1,5 +1,6 @@
 import { Container, Brand, Form } from './styles'
 import Logo from '../../assets/explorerLogo.svg'
+import { Input } from '../../components/Input'
 
 export function SignIn() {
   return (
@@ -10,7 +11,11 @@ export function SignIn() {
       </Brand>
 
       <Form>
-
+        <Input  
+          type="email"
+          title="Email"
+          placeholder="Exemplo: exemplo@exemplo.com.br"
+        />
       </Form>
 
     </Container>
