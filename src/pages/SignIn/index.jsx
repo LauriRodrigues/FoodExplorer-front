@@ -16,6 +16,12 @@ export function SignIn() {
           title="Email"
           placeholder="Exemplo: exemplo@exemplo.com.br"
         />
+
+        <Input  
+          type="password"
+          title="Senha"
+          placeholder="No mínimo 6 caracteres"
+        />
       </Form>
 
     </Container>
