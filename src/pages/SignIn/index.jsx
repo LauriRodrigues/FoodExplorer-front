@@ -1,8 +1,10 @@
 import { Container, Brand, Form } from './styles'
 import Logo from '../../assets/explorerLogo.svg'
 import { Input } from '../../components/Input'
+import { Button } from '../../components/Button'
 
 export function SignIn() {
+
   return (
     <Container>
       <Brand>
@@ -11,6 +13,8 @@ export function SignIn() {
       </Brand>
 
       <Form>
+        <h2>Faça login</h2>
+
         <Input  
           type="email"
           title="Email"
@@ -22,6 +26,14 @@ export function SignIn() {
           title="Senha"
           placeholder="No mínimo 6 caracteres"
         />
+
+        <Button 
+          type="submit" 
+          title="Entrar"
+        />
+
+        <a href="/"> Criar uma conta </a>
+    
       </Form>
 
     </Container>

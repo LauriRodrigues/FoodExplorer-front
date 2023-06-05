@@ -13,7 +13,9 @@ export const Container = styled.div`
     }
 
   > input {
+    width: 100%;
     font-size: 1.6rem;
+    font-weight: 400;
     color: ${({theme}) => theme.COLORS.LIGHT_300};
     min-width: 31.6rem;
     padding: 1.2rem 1.4rem;
