@@ -20,9 +20,9 @@ export const Container = styled.div`
 `
 
 export const Brand = styled.div`
+  width: min(90%, 31.6rem);
   display: flex;
   flex-direction: row;
-  align-items: center;
   gap: 1.1rem;
   margin-bottom: 7.3rem;
 

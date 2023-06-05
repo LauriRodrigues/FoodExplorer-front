@@ -1,6 +1,6 @@
 import { Container } from './styles';
 
-export function Input({ icon: Icon, title, ...rest }) {
+export function Input({ Icon: Icon, title, ...rest }) {
     return(
         <Container>
             <p>{title}</p>
