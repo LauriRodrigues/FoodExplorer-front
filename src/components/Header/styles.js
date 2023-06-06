@@ -46,6 +46,10 @@ export const Container = styled.header`
     align-items: flex-start;
     background: linear-gradient(#001119 114px, #000a0f 114px);
 
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 1s;
+
     .input {
       margin-top: 6.5rem;
       margin-bottom: 3.6rem;
@@ -53,7 +57,10 @@ export const Container = styled.header`
     }
   }
 
-  
+  nav.mobile-menu {
+    opacity: 1;
+    transform: translateY(0);
+  }
 `
 
 export const Brand = styled.div`

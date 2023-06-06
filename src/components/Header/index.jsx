@@ -1,7 +1,6 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Container, Brand, SearchBox } from './styles'
 import { Input } from '../Input'
-import { FiSearch } from 'react-icons/fi'
 
 import openMenuIcon from '../../assets/openMenu.svg'
 import closeMenuIcon from '../../assets/closeMenu.svg'
@@ -9,21 +8,23 @@ import receiptIcon from '../../assets/receipt.svg'
 import Logo from '../../assets/explorerLogo.svg'
 
 export function Header() {
-  const [menuOpen, setMenuOpen] = useState(false)
+  const [menuExpanded, setMenuExpanded] = useState(false)
+
+  const navRef = useRef()
 
   function handleMenu() {
-    if (menuOpen) {
+    if (menuExpanded) {
       document.getElementById('menuIcon').src = openMenuIcon
-      setMenuOpen(false)
+      setMenuExpanded(false)
     } else {
       document.getElementById('menuIcon').src = closeMenuIcon
-      setMenuOpen(true)
+      setMenuExpanded(true)
     }
   }
 
   function toggleNavbar(e) {
-    console.log('toggleNavbar', e.target);
-    navRef.current.classList.toggle('mobile-menu');
+    console.log('toggleNavbar', e.target)
+    navRef.current.classList.toggle('mobile-menu')
   }
 
   return (
@@ -48,7 +49,7 @@ export function Header() {
       </div>
 
       <div className="navBar">
-        <nav>
+        <nav ref={navRef}>
           <button 
             className="menu" 
             onClick={toggleNavbar} 
