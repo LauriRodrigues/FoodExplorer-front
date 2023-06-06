@@ -9,7 +9,7 @@ export const Container = styled.div`
   }
 
   > svg {
-        margin-left: 1.8rem;
+      margin-left: 1.8rem;
     }
 
   > input {
