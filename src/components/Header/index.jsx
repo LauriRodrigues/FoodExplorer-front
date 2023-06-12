@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { Container, Brand, SearchBox } from './styles'
+import { Container, Brand } from './styles'
 import { Input } from '../Input'
 
 import openMenuIcon from '../../assets/openMenu.svg'

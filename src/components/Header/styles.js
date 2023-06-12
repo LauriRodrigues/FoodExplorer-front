@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import { Input } from '../Input';
 
 export const Container = styled.header`
   width: 100vw;
@@ -9,7 +8,7 @@ export const Container = styled.header`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: .5rem;
   background-color: ${({ theme }) => theme.COLORS.DARK_400};
 
   button {
@@ -80,11 +79,3 @@ export const Brand = styled.div`
     font-size: 2.1rem;
   }
 `
-
-export const SearchBox = styled(Input)`
-  background: ${({ theme }) => theme.COLORS.DARK_900};
-
-  && {
-    background-color: transparent;
-  }
-`;
