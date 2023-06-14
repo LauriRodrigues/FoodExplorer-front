@@ -5,6 +5,7 @@ import { Input } from '../Input'
 import openMenuIcon from '../../assets/openMenu.svg'
 import closeMenuIcon from '../../assets/closeMenu.svg'
 import receiptIcon from '../../assets/receipt.svg'
+import exitIcon from '../../assets/exit.svg'
 import Logo from '../../assets/explorerLogo.svg'
 
 export function Header() {
@@ -70,11 +71,17 @@ export function Header() {
             <span>Sair</span>
           </button>
         </nav>
+
+        <button id="receiptButton" aria-label="pedido">
+          <img src={receiptIcon} alt="botão de pedidos" />
+          <span>Pedidos (0)</span>
+        </button>
+
+        <button id="exitIcon">
+          <img src={exitIcon} alt="Botão para sair da aplicação" />
+        </button>
       </div>
 
-      <button>
-      <img src={receiptIcon} alt="botão para ver itens do pedido" />
-      </button>
     </Container>
   )
 }
