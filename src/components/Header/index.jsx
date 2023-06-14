@@ -9,19 +9,8 @@ import exitIcon from '../../assets/exit.svg'
 import Logo from '../../assets/explorerLogo.svg'
 
 export function Header() {
-  const [menuExpanded, setMenuExpanded] = useState(false)
 
   const navRef = useRef()
-
-  function handleMenu() {
-    if (menuExpanded) {
-      document.getElementById('menuIcon').src = openMenuIcon
-      setMenuExpanded(false)
-    } else {
-      document.getElementById('menuIcon').src = closeMenuIcon
-      setMenuExpanded(true)
-    }
-  }
 
   function toggleNavbar(e) {
     console.log('toggleNavbar', e.target)
@@ -33,7 +22,7 @@ export function Header() {
       <button 
         className="menu" 
         onClick={toggleNavbar}
-        aria-label="Abrir o Menu" 
+        aria-label="Abrir o Menu"
       >
         <img 
           id="menuIcon"
