@@ -1,5 +1,7 @@
 import { Container } from './styles'
 import mealPlaceholder from '../../assets/mealPlaceholder.svg'
+import { QuantitySelector } from '../QuantitySelector'
+import { Button } from '../Button'
 
 export function MealCard() {
   
@@ -21,6 +23,12 @@ export function MealCard() {
       <p className='mealDescription'>Descrição teste</p>
 
       <div className='mealPrice'>R$ 20,00</div>
+
+      <div className="selectorAndButton">
+        <QuantitySelector/>
+        <Button title="incluir"/>
+      </div>
+
     </Container>
   )
 }

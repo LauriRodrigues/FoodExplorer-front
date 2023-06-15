@@ -80,4 +80,17 @@ export const Container = styled.div`
     text-align: center;
     color:  ${({ theme }) => theme.COLORS.BLUE_100};
   }
+
+  > .selectorAndButton {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+
+    button {
+      height: 3.2rem;
+      border-radius: .5rem;
+    }
+  }
 `
