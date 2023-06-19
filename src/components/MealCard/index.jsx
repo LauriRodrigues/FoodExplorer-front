@@ -2,9 +2,15 @@ import { Container } from './styles'
 import mealPlaceholder from '../../assets/mealPlaceholder.svg'
 import { QuantitySelector } from '../QuantitySelector'
 import { Button } from '../Button'
+import { api } from '../../services/api'
+import { useAuth } from '../../hooks/auth'
+import { useNavigate } from 'react-router-dom'
 
-export function MealCard() {
-  
+export function MealCard({ data }) {
+
+  const { user } = useAuth()
+  const navigate = useNavigate()
+
   return (
     <Container>
       <button className="favButton">

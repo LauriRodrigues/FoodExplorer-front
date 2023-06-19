@@ -12,11 +12,13 @@ export function AuthProvider({ children }) {
     try {
       const response = await api.post("/sessions", {email, password})
       const { user, token } = response.data
+
       localStorage.setItem("@foodExplorer:user", JSON.stringify(user))
       localStorage.setItem("@foodExplorer:token", token)
+
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`
       setData({user, token})
-      console.log(user, token)
+
     }
 
     catch (error) {
@@ -56,3 +58,4 @@ export function useAuth() {
   const context = useContext(AuthContext)
   return context
 }
+

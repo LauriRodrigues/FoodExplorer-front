@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { Container, Brand, Form } from './styles'
 import Logo from '../../assets/explorerLogo.svg'
 import { Input } from '../../components/Input'
@@ -6,19 +6,14 @@ import { Button } from '../../components/Button'
 import { useAuth } from '../../hooks/auth'
 
 export function SignIn() {
-  const { signIn } = useAuth()
-  const [email, setEmail] = useState('')
-  const [ password, setPassword ] = useState('')
+  const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
 
-  const loginButton = useRef(null)
-
-  async function handleSignIn(event) {
-    event.preventDefault();
-    if (!email || !password) return alert('Por favor, informe email e senha!')
-    loginButton.current.disabled = true
-    await signIn({ email, password })
-    loginButton.current.disabled = false
-  }
+    const { signIn } = useAuth()
+    
+    function handleSignIn() {
+      signIn({email, password})
+    }
 
   return (
     <Container>
@@ -47,16 +42,13 @@ export function SignIn() {
         />
 
         <Button 
-          type="submit" 
           title="Entrar"
-          ref={loginButton}
           onClick={handleSignIn}
         />
 
         <a href="/register"> Criar uma conta </a>
     
       </Form>
-
     </Container>
   )
 }

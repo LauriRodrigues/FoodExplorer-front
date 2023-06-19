@@ -7,10 +7,12 @@ import closeMenuIcon from '../../assets/closeMenu.svg'
 import receiptIcon from '../../assets/receipt.svg'
 import exitIcon from '../../assets/exit.svg'
 import Logo from '../../assets/explorerLogo.svg'
+import { useAuth } from '../../hooks/auth'
 
 export function Header() {
 
   const navRef = useRef()
+  const { signOut } = useAuth()
 
   function toggleNavbar(e) {
     console.log('toggleNavbar', e.target)
@@ -56,7 +58,7 @@ export function Header() {
             placeholder="Busque por pratos ou ingredientes"
           />
 
-          <button className="mobile-button">
+          <button className="mobile-button" onClick={signOut}>
             <span>Sair</span>
           </button>
         </nav>
@@ -66,7 +68,7 @@ export function Header() {
           <span>Pedidos (0)</span>
         </button>
 
-        <button id="exitIcon">
+        <button id="exitIcon" onClick={signOut}>
           <img src={exitIcon} alt="Botão para sair da aplicação" />
         </button>
       </div>
