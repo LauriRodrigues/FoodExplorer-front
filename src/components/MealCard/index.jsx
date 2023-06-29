@@ -7,9 +7,14 @@ import { useAuth } from '../../hooks/auth'
 import { useNavigate } from 'react-router-dom'
 
 export function MealCard({ data }) {
+  const avatarURL = `${api.defaults.baseURL}/files/${data.avatar}`
 
   const { user } = useAuth()
   const navigate = useNavigate()
+
+  function handleDetails(id) {
+    navigate(`/details/${id}`)
+  }
 
   return (
     <Container>
@@ -21,14 +26,14 @@ export function MealCard({ data }) {
         </svg>
       </button>
 
-      <div>
+      <div className="mealPreviewBox">
         <img className='mealPreview' src={mealPlaceholder} alt="imagem do prato" />
-        <h3 className='mealTitle'>Salada teste</h3>
+        <h3 className='mealTitle'>{data.title}</h3>
       </div>
 
-      <p className='mealDescription'>Descrição teste</p>
+      <p className='mealDescription'>{data.description}</p>
 
-      <div className='mealPrice'>R$ 20,00</div>
+      <div className='mealPrice'>R$ {data.price}</div>
 
       <div className="selectorAndButton">
         <QuantitySelector/>

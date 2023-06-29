@@ -47,13 +47,18 @@ export const Container = styled.div`
 
   }
 
+  .mealPreviewBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .mealPreview {
     width: 8.8rem;
   }
 
   .mealTitle {
     width: 100%;
-    position: relative;
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.4rem;
