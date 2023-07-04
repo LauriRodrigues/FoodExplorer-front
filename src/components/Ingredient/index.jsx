@@ -1,7 +1,5 @@
-import { Container } from "./styles";
-import PropTypes from 'prop-types';
-
-
+import { Container } from "./styles"
+import PropTypes from 'prop-types'
 export function Ingredient({title}) {
   return(
     <Container>
