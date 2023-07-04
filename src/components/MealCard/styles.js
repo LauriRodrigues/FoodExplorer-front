@@ -2,7 +2,7 @@ import { DEVICE } from '../../styles/device'
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  width: 21rem;
+  min-width: 21rem;
   height: 29rem;
   padding: 2.4rem;
   display: flex;
