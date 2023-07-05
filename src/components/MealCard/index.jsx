@@ -28,7 +28,7 @@ export function MealCard({ data }) {
 
       <div className="mealPreviewBox">
         <img className='mealPreview' src={mealPlaceholder} alt="imagem do prato" />
-        <h3 className='mealTitle'>{data.title}</h3>
+        <h3 className='mealTitle' onClick={() => handleDetails(data.id)}>{data.title}</h3>
       </div>
 
       <p className='mealDescription'>{data.description}</p>
