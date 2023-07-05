@@ -6,7 +6,7 @@ export const Container = styled.div`
   
   main {
     width: 32rem;
-    height: calc(100vh - 17.5rem);
+    min-height: 68rem;
     margin-inline: auto;
     margin-top: 1.6rem;
 
@@ -30,8 +30,9 @@ export const Container = styled.div`
       display: flex;
       flex-direction: column;
       align-items: center;
+      width:100%;
 
-      img {
+      .mealPreview {
         width: 26.4rem;
       }
 
@@ -40,28 +41,38 @@ export const Container = styled.div`
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        .mealTitle {
+          font-family: 'Poppins', sans-serif;
+          font-size: 2.7rem;
+          font-weight: 500;
+          line-height: 140%;
+        }
+
+        .mealDescription {
+          text-align: center;
+          margin-block: 2.4rem;
+        }
+
+        .ingredients {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2.4rem;
+          flex-wrap: wrap;
+          margin-bottom: 4.8rem;
+        }
       }
 
-      .mealTitle {
-        font-family: 'Poppins', sans-serif;
-        font-size: 2.7rem;
-        font-weight: 500;
-        line-height: 140%;
-      }
-
-      .mealDescription {
-        text-align: center;
-        margin-block: 2.4rem;
-      }
-
-      .ingredients {
-        width: 100%;
+      .order {
         display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 2.4rem;
-        flex-wrap: wrap;
-        margin-bottom: 4.8rem;
+        flex-direction: row;
+        gap: 2rem;
+
+        .receiptButton {
+          width: 19rem;
+        }
       }
     }
   }
@@ -84,20 +95,19 @@ export const Container = styled.div`
 
         .ingredientTextContent {
           align-items: flex-start;
-        }
 
-        .mealTitle {
-          font-size: 4rem;
-        }
+          .mealTitle {
+            font-size: 4rem;
+          }
 
-        .mealDescription {
-          font-size: 2.4rem;
-          text-align: left;
-        }
+          .mealDescription {
+            font-size: 2.4rem;
+            text-align: left;
+          }
 
-        .ingredients {
-          justify-content: flex-start;
-          margin-bottom: 0;
+          .ingredients {
+            justify-content: flex-start;
+          }
         }
       }
     }

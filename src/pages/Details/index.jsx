@@ -2,22 +2,23 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import { Container } from "./styles"
 import mealPlaceholder from '../../assets/mealPlaceholder.svg'
-
-import { Footer } from "../../components/Footer"
 import { Header } from "../../components/Header"
-import { Button } from "../../components/Button"
-import { api } from "../../services/api"
 import { Ingredient } from "../../components/Ingredient"
-import { FiChevronLeft, FiMinus, FiPlus } from "react-icons/fi"
+import { QuantitySelector } from '../../components/QuantitySelector'
+import { Button } from "../../components/Button"
+import { Footer } from "../../components/Footer"
+import { api } from "../../services/api"
+import { FiChevronLeft } from "react-icons/fi"
+import receiptIcon from '../../assets/receipt.svg'
 
 export function Details() {
   const [data, setData] = useState(null)
+
   const params = useParams()
-  console.log(data)
   const navigate = useNavigate()
 
   function handleBack() {
-    navigate(-1);
+    navigate(-1)
   }
 
   useEffect(() => {
@@ -59,15 +60,14 @@ export function Details() {
                   />
                 ))}
               </div>
+
+              <div className="order">
+                <QuantitySelector />
+                <Button className="receiptButton" icon={receiptIcon}  title={`pedir ∙ ${data.price}`}/>
+              </div>
             </div>
-            
-        </div>
+          </div>
         )}
-        
-
-        <div className="order">
-
-        </div>
       </main>
 
       <Footer />
