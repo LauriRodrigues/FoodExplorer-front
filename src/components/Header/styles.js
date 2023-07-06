@@ -73,6 +73,10 @@ export const Container = styled.header`
     border-bottom: 1px solid ${({theme}) => theme.COLORS.DARK_100};
   }
 
+  #newButton {
+    display:  none;
+  }
+
   #receiptButton span {
     display: none;
   }
@@ -122,6 +126,16 @@ export const Container = styled.header`
         grid-area: search;
       }
 
+      #newButton {
+        display: flex;
+        max-width: 21.6rem;
+        background: ${({theme}) => theme.COLORS.RED_400};
+        padding: 1.2rem 3.2rem;
+        border-radius: .5rem;
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.4rem;
+      }
+
       #receiptButton {
         max-width: 21.6rem;
         display: flex;
@@ -158,22 +172,44 @@ export const Brand = styled.div`
     height: 2.4rem;
   }
 
-  > h1 {
+  .logoText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .8rem;
+  }
+
+  h1 {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     line-height: 2.4rem;
     font-size: 2.1rem;
   }
 
+  span {
+    font-size: 1.2rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 160%;
+    color: ${({theme}) => theme.COLORS.BLUE_100};
+  }
+
   ${DEVICE.lg} {
     min-width: 19.7rem;
+    align-items: flex-start;
 
     > img {
       width: 3rem;
       height: 3rem;
     }
 
-    > h1 {
+    .logoText {
+      flex-direction: column;
+      gap: 0;
+      align-items: end;
+    }
+
+    h1 {
       font-size: 2.4rem;
     }
   }

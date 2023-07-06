@@ -1,4 +1,5 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
+import { useNavigate } from "react-router-dom"
 import { Container, Brand } from './styles'
 import { Input } from '../Input'
 
@@ -11,12 +12,18 @@ import { useAuth } from '../../hooks/auth'
 
 export function Header() {
 
+  const { user } = useAuth()
   const navRef = useRef()
   const { signOut } = useAuth()
+  const navigate = useNavigate()
 
   function toggleNavbar(e) {
     console.log('toggleNavbar', e.target)
     navRef.current.classList.toggle('mobile-menu')
+  }
+
+  function handleNewMeal(id) {
+    navigate(`/New`)
   }
 
   return (
@@ -36,7 +43,12 @@ export function Header() {
       <div className="logoContainer">
         <Brand>
           <img src={Logo} alt="Logo Explorer"/>
-          <h1>food explorer</h1>
+            <div className="logoText">
+              <h1>food explorer</h1>
+              {user.is_admin === 1 && (
+                <span>admin</span>
+              )}
+            </div>
         </Brand>
       </div>
 
@@ -58,15 +70,29 @@ export function Header() {
             placeholder="Busque por pratos ou ingredientes"
           />
 
+          {user.is_admin === 1 && (
+            <button className="mobile-button" onClick={handleNewMeal}>
+              <span>Novo prato</span>
+            </button>
+          )}
+
           <button className="mobile-button" onClick={signOut}>
             <span>Sair</span>
           </button>
         </nav>
 
-        <button id="receiptButton" aria-label="pedido">
-          <img src={receiptIcon} alt="botão de pedidos" />
-          <span>Pedidos (0)</span>
-        </button>
+        {user.is_admin === 0 && (
+          <button id="receiptButton" aria-label="pedido">
+            <img src={receiptIcon} alt="botão de pedidos" />
+            <span>Pedidos (0)</span>
+          </button>
+        )}
+
+        {user.is_admin === 1 && (
+          <button id="newButton" onClick={handleNewMeal}>
+            Novo prato
+          </button>
+        )}
 
         <button id="exitIcon" onClick={signOut}>
           <img src={exitIcon} alt="Botão para sair da aplicação" />
