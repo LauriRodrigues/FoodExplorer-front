@@ -21,7 +21,7 @@ export const Container = styled.div`
     filter: brightness(1.2);
   }
 
-  > .favButton {
+  > .favButton, .editMeal {
     background: none;
     border: none;
     width: 2.4rem;
@@ -36,7 +36,9 @@ export const Container = styled.div`
     &:hover {
       transform: scale(1.1);
     }
+  }
 
+  > .favButton {
     > svg path {
     transition: stroke 1s;
     }
@@ -44,7 +46,6 @@ export const Container = styled.div`
     &:hover svg path {
       stroke: ${({ theme }) => theme.COLORS.RED_300};
     }
-
   }
 
   .mealPreviewBox {

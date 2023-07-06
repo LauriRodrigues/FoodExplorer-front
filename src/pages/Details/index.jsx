@@ -8,17 +8,23 @@ import { QuantitySelector } from '../../components/QuantitySelector'
 import { Button } from "../../components/Button"
 import { Footer } from "../../components/Footer"
 import { api } from "../../services/api"
+import { useAuth } from '../../hooks/auth'
 import { FiChevronLeft } from "react-icons/fi"
 import receiptIcon from '../../assets/receipt.svg'
 
 export function Details() {
   const [data, setData] = useState(null)
 
+  const { user } = useAuth()
   const params = useParams()
   const navigate = useNavigate()
 
   function handleBack() {
     navigate(-1)
+  }
+
+  function handleEditMeal(id) {
+    navigate(`/edit/${id}`);
   }
 
   useEffect(() => {
@@ -61,10 +67,17 @@ export function Details() {
                 ))}
               </div>
 
+            {user.is_admin === 0 && (
               <div className="order">
                 <QuantitySelector />
                 <Button className="receiptButton" icon={receiptIcon}  title={`pedir ∙ ${data.price}`}/>
               </div>
+            )}
+
+            {user.is_admin === 1 && (
+              <Button className="editButton" title="Editar prato" onClick={() => handleEditMeal(data.id)}/>
+            )}
+
             </div>
           </div>
         )}

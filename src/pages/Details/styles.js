@@ -74,6 +74,10 @@ export const Container = styled.div`
           width: 19rem;
         }
       }
+
+      .editButton {
+        font-size: 1%.4;
+      }
     }
   }
 
@@ -81,7 +85,7 @@ export const Container = styled.div`
     main {
       width: 100%;
       padding-inline: 10rem;
-      height: calc(100vh - 20rem);
+      height: calc(100vh - 10rem);
 
       .ingredientBox {
         display: flex;
@@ -108,6 +112,11 @@ export const Container = styled.div`
           .ingredients {
             justify-content: flex-start;
           }
+        }
+
+        .editButton {
+          width: 14rem;
+          padding-inline: 2.4rem;
         }
       }
     }
