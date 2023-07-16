@@ -127,14 +127,22 @@ export const Form = styled.form`
     border-radius: 1rem;
     margin-top: 1rem;
   }
+  .buttonsForm {
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
 
-  #sendButton {
-    background: ${({ theme }) => theme.COLORS.RED_100};
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.4rem;
-    font-weight: 500;
-    line-height: 2.4rem;
+    #deleteButton {
+      background: ${({ theme }) => theme.COLORS.DARK_300};
+      font-size: 1.2rem;
+    }
+
+    #sendButton {
+      background: ${({ theme }) => theme.COLORS.RED_100};
+      font-size: 1.2rem;
+    }
   }
+
 
   ${DEVICE.lg} {
     .inputBox {
@@ -160,9 +168,22 @@ export const Form = styled.form`
       }
     }
 
-    #sendButton {
-      width: 17.2rem;
+    .buttonsForm {
+      display: flex;
+      flex-direction: row;
       align-self: flex-end;
+
+      #deleteButton {
+        width: 13.5rem;
+        font-size: 1.4rem;
+      }
+
+      #sendButton {
+        width: 17.2rem;
+        font-size: 1.4rem;
+      }
     }
+
+
   }
 `
