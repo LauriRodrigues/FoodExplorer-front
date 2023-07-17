@@ -19,6 +19,8 @@ export function Details() {
   const params = useParams()
   const navigate = useNavigate()
 
+  let imageURL = data && `${api.defaults.baseURL}/files/${data.image}`
+
   function handleBack() {
     navigate(-1)
   }
@@ -50,7 +52,7 @@ export function Details() {
           <div className="ingredientBox">
             <img 
               className='mealPreview' 
-              src={mealPlaceholder} 
+              src={imageURL} 
               alt="imagem do prato" 
             />
 
