@@ -22,7 +22,7 @@
 </p>
 
 <h2 align=left> 💻 Sobre o projeto </h2>
-<p> Front-end do projeto final do programa <strong>Explorer</strong> da <a href="https://www.rocketseat.com.br/"> <strong>Rocketseat</strong> </a>. Consiste em uma interface para um cardápio digital de um restaurante fictício chamado FoodExplorer feito em ReactJS. Essa interface funciona juntamente com o <p> <a href="https://github.com/LauriRodrigues/FoodExplorer-api"> <strong>Food Explorer API</strong> </a>.
+<p> Front-end do projeto final do programa <strong>Explorer</strong> da <a href="https://www.rocketseat.com.br/"> <strong>Rocketseat</strong> </a>. Consiste em uma interface para um cardápio digital de um restaurante fictício chamado FoodExplorer feito em ReactJS. Essa interface funciona juntamente com o <a href="https://github.com/LauriRodrigues/FoodExplorer-api"> <strong>Food Explorer API</strong> </a>.
 
 - [x] Aplicação responsiva.
 - [x] O usuário pode criar sua conta, fornecendo nome, e-mail e senha.
