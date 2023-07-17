@@ -7,24 +7,24 @@ import { Section } from '../../components/Section'
 import { Footer } from '../../components/Footer'
 
 export function Home() {
-
   const [search, setSearch] = useState('')
   const [meals, setMeals] = useState([])
+
   let typeMeals
   
   useEffect(() => {
     async function fetchMeals() {
       const response = await api.get(
-        `/meals?title=${search}&ingredient=${search}`
+        `/meals?title=${search}&ingredients=${search}`
       )
       setMeals(response.data)
     }
 
     fetchMeals()
-  }, 
-  [search])
-    if (meals.length > 0) {
-    typeMeals = meals.map((e) => e)
+  }, [search])
+
+  if (meals.length > 0) {
+  typeMeals = meals.map((e) => e)
   }
 
   return (

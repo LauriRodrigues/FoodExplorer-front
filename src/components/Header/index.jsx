@@ -10,7 +10,7 @@ import exitIcon from '../../assets/exit.svg'
 import Logo from '../../assets/explorerLogo.svg'
 import { useAuth } from '../../hooks/auth'
 
-export function Header() {
+export function Header({ setSearch }) {
 
   const { user } = useAuth()
   const navRef = useRef()
@@ -68,6 +68,7 @@ export function Header() {
 
           <Input
             placeholder="Busque por pratos ou ingredientes"
+            onChange={e => setSearch(e.target.value)}
           />
 
           {user.is_admin === 1 && (
