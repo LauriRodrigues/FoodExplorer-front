@@ -56,6 +56,7 @@ export const Container = styled.div`
 
   .mealPreview {
     width: 8.8rem;
+    margin-bottom: 1.5rem;
   }
 
   .mealTitle {

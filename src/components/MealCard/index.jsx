@@ -7,7 +7,11 @@ import { useAuth } from '../../hooks/auth'
 import { useNavigate } from 'react-router-dom'
 
 export function MealCard({ data }) {
-  const avatarURL = `${api.defaults.baseURL}/files/${data.avatar}`
+  let imageURL = `${api.defaults.baseURL}/files/${data.image}`
+
+  if(data.image === null) {
+    imageURL = mealPlaceholder
+  }
 
   const { user } = useAuth()
   const navigate = useNavigate()
@@ -42,7 +46,7 @@ export function MealCard({ data }) {
       )}
 
       <div className="mealPreviewBox">
-        <img className='mealPreview' src={mealPlaceholder} alt="imagem do prato" />
+        <img className='mealPreview' src={imageURL} alt={data.title} />
         <h3 className='mealTitle' onClick={() => handleDetails(data.id)}>{data.title}</h3>
       </div>
 
