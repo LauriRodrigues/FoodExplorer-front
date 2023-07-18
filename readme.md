@@ -42,5 +42,17 @@
 </div>
 
 <h2 align=left> 🎨 Layout </h2>
+<a href="https://www.figma.com/file/fPv621Bek9glIP5ZvqSl2t/food-explorer-v2-(Community)?mode=dev">Figma</a>
+<h2 align=left> ✅ Como testar o projeto </h2>
 
-<h2 align=left> ✅ Como executar o projeto </h2>
+<p>Você pode testar o projeto no <a href="foodexplorerreact.netlify.app">Deploy</a>. Se preferir pode fazer o cadastro de um usuário, ou logar nos usuários já cadastrados:</p>
+
+```bash
+# Login do administrador
+$ email: admin@admin.com
+$ password: 123
+
+# Login do usuário comum
+$ email: user@user.com
+$ password: 123
+```
